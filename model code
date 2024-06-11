@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class Calculator {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        // Initialize variables
+        int num1, num2, result;
+        String operator;
+
+        // Prompt the user for input
+        System.out.println("Enter the first number: ");
+        num1 = scanner.nextInt();
+
+        System.out.println("Enter the second number: ");
+        num2 = scanner.nextInt();
+
+        System.out.println("Enter the operator (+, -, *, /): ");
+        operator = scanner.next();
+
+        // Perform the calculation
+        switch (operator) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                result = num1 / num2;
+                break;
+            default:
+                System.out.println("Invalid operator!");
+                return;
+        }
+
+        // Print the result
+        System.out.println("The result is: " + result);
+
+        // Ask the user if they want to continue
+        System.out.println("Do you want to continue (y/n)? ");
+        String answer = scanner.next();
+
+        // If the user says yes, continue the loop
+        if (answer.equalsIgnoreCase("y")) {
+            main(args);
+        } else {
+            // Otherwise, exit the program
+            System.out.println("Goodbye!");
+            System.exit(0);
+        }
+    }
+}
